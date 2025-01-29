@@ -1,0 +1,88 @@
+.game-card {
+    width: 100%;
+    max-width: 300px; /* Ajusta según el diseño */
+    height: 400px; /* Fija la altura */
+    perspective: 1000px; /* Activa la perspectiva para el efecto 3D */
+    margin: auto;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.6s ease-in-out;
+    transform-style: preserve-3d;
+}
+
+.game-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-front {
+    background-color: lavender;
+}
+
+.card-back {
+    background-color: #ffbb00;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.game-img-container {
+    width: 250px; /* Ajusta el ancho según lo que necesites */
+    height: 250px; /* Ajusta la altura según lo que necesites */
+    overflow: hidden; /* Oculta el exceso de la imagen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px; /* Opcional: redondea los bordes */
+}
+
+.game-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recorta la imagen sin deformarla */
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los elementos */
+    justify-content: space-between; /* Espaciado uniforme */
+    padding: 20px; /* Añade margen interno */
+    text-align: center; /* Asegura alineación de texto */
+    height: 100%; /* Asegura que todas las tarjetas tengan la misma altura */
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Añade espacio entre los elementos */
+}
+
+.card-title {
+    font-size: 1.2rem; /* Ajusta el tamaño del título */
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 1rem;
+}
+
+.btn {
+    margin-top: 10px; /* Agrega margen superior para separarlo del texto */
+}
