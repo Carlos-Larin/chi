@@ -1,0 +1,12 @@
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+body {  
+    background-image: url(https://i.pinimg.com/736x/8b/5e/a2/8b5ea2d6a90157457538222f26e66513.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; 
+}
