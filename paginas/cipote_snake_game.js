@@ -11,6 +11,9 @@ let pupusa = { x: getRandomPosition(), y: getRandomPosition() };
 let direction = "RIGHT";
 let score = 0;
 
+const backgroundImg = new Image();
+backgroundImg.src = "https://diarioelsalvador.com/wp-content/uploads/2021/07/fnac28072021dgolocuilta055-300x200.png";
+
 const cipoteImg = new Image();
 cipoteImg.src = "https://i.pinimg.com/736x/f3/b0/f8/f3b0f8c2bec7bdb996c103ea3fc0c677.jpg";
 
@@ -19,6 +22,10 @@ pupusaImg.src = "https://i.pinimg.com/736x/32/38/be/3238be6a905bc075c7a6665eb1ca
 
 function getRandomPosition() {
     return Math.floor(Math.random() * (canvasSize / tileSize)) * tileSize;
+}
+
+function drawBackground() {
+    ctx.drawImage(backgroundImg, 0, 0, canvasSize, canvasSize);
 }
 
 function drawCipote() {
@@ -54,10 +61,11 @@ function updateGame() {
 
 function gameLoop() {
     ctx.clearRect(0, 0, canvasSize, canvasSize);
+    drawBackground(); // Dibuja la imagen de fondo
     drawCipote();
     drawPupusa();
     updateGame();
-    setTimeout(gameLoop, 100);
+    setTimeout(gameLoop, 200);
 }
 
 document.addEventListener("keydown", event => {
